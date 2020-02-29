@@ -1,0 +1,32 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:replace="/reusable/layout.html :: header"></div>
+
+
+
+
+<div class="container">
+
+    <div class="row justify-content-md-center productsList align-items-center mb-5" th:each="product : ${products}">
+        <div class="col col-lg2"></div>
+        <div class="col col-lg4">
+            <div class="text-center font-weight-bold">
+                <span class="d-block" th:text="${product.manufacturer}">manufacturer</span>
+                <span class="d-block" th:text="${product.modelName}">modelName</span>
+                <span class="d-block" th:text="${product.price} + ' PLN'">price</span>
+            </div>
+        </div>
+
+        <div class="col col-lg4">
+            <img class="img-fluid max-width: 30%" th:src="@{'/images/' + ${product.pathToImage}}" alt="">
+        </div>
+        <div class="col col-lg2"></div>
+
+    </div>
+
+</div>
+
+
+<div th:replace="/reusable/layout.html :: footer"></div>

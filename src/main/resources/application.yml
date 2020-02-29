@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/media_shop
+    username: user
+    password: userPassw0rd
+  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    databse: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
