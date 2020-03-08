@@ -25,6 +25,8 @@ public class HomeController {
     public HomeController(ProductService productService) {
         this.productService = productService;
 
+	//usunięcie kilku produktów
+	//kolejny komentarz
         List<ProductDto> productsToInsert = Arrays.asList(
                 new ProductDto("Xiaomi", "Mi 9", 1200f, "/smartphones/xiaomi.png", Product.Type.SMARTPHONE),
                 new ProductDto("Apple", "iPhone 11Pro", 4200f, "/smartphones/iphone.png", Product.Type.SMARTPHONE),
@@ -34,8 +36,7 @@ public class HomeController {
                 new ProductDto("Microsoft", "Xbox One X", 1800f, "/consoles/xbox.png", Product.Type.GAMING_CONSOLE),
                 new ProductDto("Nintendo", "Switch", 1400f, "/consoles/switch.png", Product.Type.GAMING_CONSOLE),
                 new ProductDto("LG", "LG tv 55\"", 6500f, "/tvs/lg.png", Product.Type.TV),
-                new ProductDto("Sony", "OLED 60\"", 7540f, "/tvs/sony.png", Product.Type.TV),
-                new ProductDto("Samsung", "QLED 65\"", 8500f, "/tvs/samsung.png", Product.Type.TV)
+                new ProductDto("Sony", "OLED 60\"", 7540f, "/tvs/sony.png", Product.Type.TV)
         );
 
         productsToInsert.forEach(p -> productService.addProduct(p));
